@@ -1,114 +1,151 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    user-select: none;
-    -webkit-user-select: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-body, html {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #050505;
-    font-family: 'Courier New', monospace;
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #050505;
+  font-family: "Courier New", monospace;
 }
 
+/* تعديل هامة: استخدام 100% بدلاً من vh لمنع المتصفحات من قص أسفل الشاشة */
 canvas {
-    display: block;
-    width: 100vw;
-    height: 100vh;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* زر القائمة أثناء اللعب */
 .game-menu-btn {
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 8px 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.5);
-    font-family: inherit;
-    font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    z-index: 5;
-    display: none;
-    transition: all 0.2s ease;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 5;
+  display: none;
+  transition: all 0.2s ease;
 }
 
 .game-menu-btn:active {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: #fff;
-    color: #fff;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* القائمة الرئيسية المجهزة للموبايل */
+/* القائمة الرئيسية */
 #startMenu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(5, 5, 5, 0.95);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    padding: 20px;
-    text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 5, 5, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  padding: 20px;
+  text-align: center;
 }
 
 #startMenu h1 {
-    color: #fff;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    letter-spacing: 4px;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 #startMenu h2 {
-    color: #888;
-    font-size: 1.2rem;
-    margin-bottom: 40px;
+  color: #888;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
 }
 
 .menu-buttons {
-    /* display: flex; */
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 300px;
 }
 
 .btn {
-    padding: 15px 25px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    font-family: inherit;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: inherit;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.ice-btn { color: #00e5ff; border-color: #00e5ff; box-shadow: 0 0 15px rgba(0, 229, 255, 0.2); }
-.ice-btn:active { background: #00e5ff; color: #000; box-shadow: 0 0 25px #00e5ff; }
+.ice-btn {
+  color: #00e5ff;
+  border-color: #00e5ff;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+.ice-btn:active {
+  background: #00e5ff;
+  color: #000;
+  box-shadow: 0 0 25px #00e5ff;
+}
 
-.fire-btn { color: #ff3d00; border-color: #ff3d00; box-shadow: 0 0 15px rgba(255, 61, 0, 0.2); }
-.fire-btn:active { background: #ff3d00; color: #000; box-shadow: 0 0 25px #ff3d00; }
+.fire-btn {
+  color: #ff3d00;
+  border-color: #ff3d00;
+  box-shadow: 0 0 15px rgba(255, 61, 0, 0.2);
+}
+.fire-btn:active {
+  background: #ff3d00;
+  color: #000;
+  box-shadow: 0 0 25px #ff3d00;
+}
 
 @media (min-width: 768px) {
-    #startMenu h1 { font-size: 4rem; }
-    .menu-buttons { flex-direction: row; max-width: 600px; }
-    .btn:hover { transform: scale(1.05); }
-    .ice-btn:hover { background: #00e5ff; color: #000; box-shadow: 0 0 25px #00e5ff; }
-    .fire-btn:hover { background: #ff3d00; color: #000; box-shadow: 0 0 25px #ff3d00; }
-    .game-menu-btn:hover { background: rgba(255, 255, 255, 0.1); color: #fff; border-color: rgba(255, 255, 255, 0.5); }
+  #startMenu h1 {
+    font-size: 4rem;
+  }
+  .menu-buttons {
+    flex-direction: row;
+    max-width: 600px;
+  }
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  .ice-btn:hover {
+    background: #00e5ff;
+    color: #000;
+    box-shadow: 0 0 25px #00e5ff;
+  }
+  .fire-btn:hover {
+    background: #ff3d00;
+    color: #000;
+    box-shadow: 0 0 25px #ff3d00;
+  }
+  .game-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+  }
 }
