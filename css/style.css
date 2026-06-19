@@ -79,7 +79,7 @@ canvas {
 }
 
 .menu-buttons {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     gap: 20px;
     width: 100%;
