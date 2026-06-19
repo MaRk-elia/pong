@@ -1,12 +1,35 @@
 <!doctype html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <title>Pong Game: Ice vs Fire</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"
+    />
+    <title>Neon Pong: Ice vs Fire</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <div id="orientationWarning">
+      <div class="warning-box">
+        <div class="phone-icon">🔄</div>
+        <p>Rotate your phone (landscape) for easy game</p>
+      </div>
+    </div>
+
+    <button id="btnMenu" class="game-menu-btn">Menu</button>
+
+    <div id="startMenu">
+      <h1>NEON PONG</h1>
+      <h2>Choose The Game</h2>
+      <div class="menu-buttons">
+        <button id="btn1P" class="btn ice-btn">solo</button>
+        <button id="btn2P" class="btn fire-btn">Multi</button>
+      </div>
+    </div>
+
     <canvas id="pongCanvas"></canvas>
+
     <script src="./js/script.js"></script>
   </body>
 </html>
